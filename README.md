@@ -73,3 +73,7 @@ Nx Console es una extensión para editores que mejora tu experiencia de desarrol
 - [Únete a nuestro grupo en LinkedIn](https://www.linkedin.com/in/dominicode)
 
 ¡Esperamos que disfrutes del curso y aprendas mucho sobre Angular moderno!
+
+## creación interceptor
+Run `ng g interceptor interceptor --function`
+Run with nx `nx g @nx/angular:interceptor interceptor`
