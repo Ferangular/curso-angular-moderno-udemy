@@ -1,5 +1,5 @@
 import { CurrencyPipe, NgClass,   SlicePipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CartStore } from 'src/app/store/cart-state/cart-state.service';
 import { catchError } from 'rxjs';
@@ -13,7 +13,7 @@ import { catchError } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
-  @Input() cart!: CartStore | null;
+  cart = input.required<CartStore | null>();
   showCart = false;
   protected readonly catchError = catchError;
 }

@@ -77,3 +77,8 @@ Nx Console es una extensión para editores que mejora tu experiencia de desarrol
 ## creación interceptor
 Run `ng g interceptor interceptor --function`
 Run with nx `nx g @nx/angular:interceptor interceptor`
+## remove zone.js
+Run ` npm uninstal zone.js`
+## Migración hacia signals queries
+- [Documentación de Angular](https://angular.dev/reference/migrations)
+Run ` npm uninstal zone.js`

@@ -1,9 +1,7 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  EventEmitter,
-  Input,
-  Output,
+  input, output
 } from '@angular/core';
 
 type AddToCartConfig = Record<'text', string>;
@@ -19,16 +17,16 @@ const defaultConfig: AddToCartConfig = {
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
+    @let  myConfig= config();
     <button (click)="onAddToCart()" class="btn">
-      {{ config.text }}
+      {{ myConfig.text }}
     </button>
   `,
   styleUrl: './add-to-cart.component.scss',
 })
 export class AddToCartComponent {
-  @Input() config: AddToCartConfig = defaultConfig;
-  @Output() addToCartEvent = new EventEmitter<void>();
-
+  config = input<AddToCartConfig>(defaultConfig, { alias: 'myConfig' });
+  addToCartEvent = output()
   onAddToCart(): void {
     this.addToCartEvent.emit();
   }
