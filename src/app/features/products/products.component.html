@@ -1,11 +1,14 @@
 <section class="product-container">
   <div class="product-grid">
-    @for(product of (products$ | async); track product.id){
-      <app-card
+<!--    @for(product of (products$ | async); track product.id){-->
+    @for(product of products$();  track product.id  ){
+          <app-card
                 (addToCartEvent)="onAddToCart($event)"
                 [product]="product"
                 data-testid="product-card" class="product-card">
       </app-card>
+    } @empty {
+      <p>NO results yet! </p>
     }
 
   </div>
