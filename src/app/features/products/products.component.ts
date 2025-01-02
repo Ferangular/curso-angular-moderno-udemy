@@ -21,7 +21,7 @@ export default class ProductsComponent implements OnInit {
   private readonly _cartService = inject(CartStateService);
 
   // products$ = this._productsService.products$;
-  products$ = toSignal(this._productsService.products$, { initialValue: [] });
+  products = this._productsService.products;
   ngOnInit() {
     this._route.queryParams.subscribe((params) => {
       const category = params['category'] || 'all';
