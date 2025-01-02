@@ -27,7 +27,8 @@ import { toSignal } from '@angular/core/rxjs-interop';
 })
 export class AppComponent {
   currentRoute = '';
-  readonly cart$ = inject(CartStateService).cart$;
+  private readonly cartService = inject(CartStateService);
+  cartStore = this.cartService.cartStore
   private readonly _router = inject(Router);
 o$= of(1,2,3,4,5);
 signal = toSignal(this.o$, {

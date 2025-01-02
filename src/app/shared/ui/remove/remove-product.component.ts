@@ -1,7 +1,6 @@
 import {
   ChangeDetectionStrategy,
-  Component,
-   output
+  Component,   output
 } from '@angular/core';
 import { RemoveSVGComponent } from './svg/remove-svg.component';
 
@@ -18,8 +17,8 @@ import { RemoveSVGComponent } from './svg/remove-svg.component';
   imports: [RemoveSVGComponent],
 })
 export class RemoveProductComponent {
-   clickRemoveProduct = output()
+  onClickRemoveProduct = output();
   onRemoveProduct(): void {
-    this.clickRemoveProduct.emit();
+    this.onClickRemoveProduct.emit();
   }
 }
